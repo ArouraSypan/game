@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/tlogin" enctype="multipart/form-data">
+<input type="text" id="userName" name="username" placeholder="请输入用户名">
+<input type="password" id="password" name="pass">
+<input type="submit" value="登录">
+</form>
+
+<script>
+    function login() {
+        var msg={name:document.getElementById("userName").value,password:document.getElementById("password").value}
+        msg=JSON.stringify(msg);
+        var ajax=new XMLHttpRequest();
+        //打开一个链接
+        ajax.open('post','http://localhost:8080/tlogin',true);
+        //发送请求
+        ajax.send(msg);
+        //获得服务器发送的数据
+        ajax.onreadystatechange=function () {
+            if(ajax.readyState==4&& ajax.status==200){
+              var msg=JSON.parse(ajax.responseText);
+                if(msg==0){
+                    alert('用户名不存在或者出错')
+                }
+                else if(msg == 2){
+                    alert('用户名与密码不匹配')
+                }
+                else {
+                    alert('登录成功');
+                    console.log(msg)
+                   // window.location.href='http://localhost:8080/game';
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

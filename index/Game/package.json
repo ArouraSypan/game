@@ -1,0 +1,29 @@
+{
+  "name": "WeChat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sehunwy/WeChat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sehunwy/WeChat/issues"
+  },
+  "homepage": "https://github.com/Sehunwy/WeChat#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
+    "mysql": "^2.16.0",
+    "nodejs-websocket": "^1.7.2",
+    "websocket": "^1.0.28"
+  }
+}
